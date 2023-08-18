@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/hijaujawir"
     android:layout_height="match_parent"
     tools:context=".adminOption">
 
@@ -18,6 +19,7 @@
             android:id="@+id/daftar_menu"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:backgroundTint="#E8AA42"
             android:text="daftar menu">
         </Button>
 
@@ -25,12 +27,14 @@
             android:id="@+id/tambah_menu"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:backgroundTint="#E8AA42"
             android:text="tambah menu">
         </Button>
 
         <Button
             android:id="@+id/daftar_meja"
             android:layout_width="match_parent"
+            android:backgroundTint="#E8AA42"
             android:layout_height="45dp"
             android:text="daftar meja">
         </Button>
@@ -38,6 +42,7 @@
         <Button
             android:id="@+id/tambah_meja"
             android:layout_width="match_parent"
+            android:backgroundTint="#E8AA42"
             android:layout_height="45dp"
             android:text="tambah meja">
         </Button>
@@ -46,6 +51,7 @@
         <Button
             android:id="@+id/daftar_user"
             android:layout_width="match_parent"
+            android:backgroundTint="#E8AA42"
             android:layout_height="45dp"
             android:text="daftar user">
         </Button>
@@ -54,6 +60,7 @@
             android:id="@+id/tambah_user"
             android:layout_width="match_parent"
             android:layout_height="45dp"
+            android:backgroundTint="#E8AA42"
             android:text="tambah user">
         </Button>
 

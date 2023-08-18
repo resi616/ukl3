@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hijaujawir"
-    tools:context=".sign_in">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginTop="85dp"
-        android:gravity="center"
-        android:fontFamily="@font/lora"
-        android:text="JAWIR CAFE"
-        android:textColor="@color/oren2"
-        android:textSize="50sp">
-
-    </TextView>
+    tools:context=".loginpegawai">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,19 +15,17 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/usernamePegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:inputType="textEmailAddress"
-            android:hint="@string/email"
+            android:hint="@string/username"
             android:textColorHint="@color/white"
-            android:padding="15dp" />
+            android:padding="15dp"/>
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/passwordPegawai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -56,25 +44,6 @@
             android:text="@string/login">
 
         </Button>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-           android:id="@+id/textViewClickable"
-            android:text="Masuk sebagai pegawai"
-
-            android:textColor="@color/white"/>
-
-        <!--        <TextView-->
-        <!--            android:padding="12dp"-->
-        <!--            android:id="@+id/sign_in"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="@string/create_account"-->
-        <!--            android:autoLink="web">-->
-
-        <!--        </TextView>-->
-
 
     </LinearLayout>
 

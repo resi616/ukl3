@@ -41,18 +41,18 @@ class DaftarUser : AppCompatActivity() {
 
         dbRef = FirebaseDatabase.getInstance().getReference("User")
 
-        dbRef.addValueEventListener(object : ValueEventListener{
+        dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
-                if(snapshot.exists()){
-                    for (userSnap in snapshot.children){
+                if (snapshot.exists()) {
+                    for (userSnap in snapshot.children) {
                         val userData = userSnap.getValue(UserModel::class.java)
                         userList.add(userData!!)
                     }
                     val mAdapter = UserAdapter(userList)
                     userRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : UserAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : UserAdapter.onItemClickListener {
                         override fun onItemClick(position: Int) {
                             val intent = Intent(this@DaftarUser, UserDetail::class.java)
 
@@ -62,25 +62,14 @@ class DaftarUser : AppCompatActivity() {
                         }
 
                     })
-                    userRecyclerView.visibility = View.VISIBLE
-                    tvLoadingData.visibility = View.GONE
-
-//                    mAdapter.setOnItemClickListener(object : UserAdapter.onItemClickListener{
-//                        override fun onItemClick(position: Int) {
-//                            val intent = Intent (this@DaftarUser, UserDetail::class.java)
-//                        }
-//                    })
                 }
+                userRecyclerView.visibility = View.VISIBLE
+                tvLoadingData.visibility = View.GONE
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                // ... (kode penanganan error, jika diperlukan) ...
             }
         })
-
     }
 }
-
-
-
-

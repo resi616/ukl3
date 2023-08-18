@@ -23,14 +23,20 @@ class AddUserActivity : AppCompatActivity() {
 
         binding.btnAddUser.setOnClickListener{
             val userName = binding.edtUser.text.toString()
+            val passwordPegawai = binding.edtPaswordPegawai.text.toString()
+            val roleKasir =  binding.checkboxKasir.isChecked
+            val roleManager = binding.checkboxManager.isChecked
 
             if(userName.isNotEmpty()){
                 val userId = databaseReference.push().key!!
-                val user = UserModel(userId, userName)
+                val user = UserModel(userId, userName,passwordPegawai, roleKasir, roleManager)
                 databaseReference.child(userId).setValue(user)
                     .addOnCompleteListener{
                         Toast.makeText(this, "Tambah User Sukses", Toast.LENGTH_SHORT).show()
                         binding.edtUser.text?.clear()
+                        binding.edtPaswordPegawai.text?.clear()
+                        binding.checkboxKasir.isChecked = false
+                        binding.checkboxManager.isChecked = false
                     }.addOnFailureListener{err ->
                     }
             }else  {

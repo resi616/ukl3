@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Ukl3"
         tools:targetApi="31">
         <activity
+            android:name=".menuDetail"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatTransaksi"
+            android:exported="false" />
+        <activity
+            android:name=".TambahTransaksi"
+            android:exported="false" />
+        <activity
+            android:name=".managerOption"
+            android:exported="false" />
+        <activity
+            android:name=".loginpegawai"
+            android:exported="false" />
+        <activity
             android:name=".AddUserActivity"
             android:exported="false" />
         <activity
@@ -25,7 +40,7 @@
             android:name=".DaftarUser"
             android:exported="false" />
         <activity
-            android:name=".kasirOption"
+            android:name=".menuKasir"
             android:exported="false" />
         <activity
             android:name=".MejaDetail"
@@ -35,9 +50,6 @@
             android:exported="false" />
         <activity
             android:name=".AddMejaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuDetail"
             android:exported="false" />
         <activity
             android:name=".DaftarMenu"
@@ -60,6 +72,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

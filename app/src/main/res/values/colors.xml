@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="biru1">#30A2FF</color>
+    <color name="biru2">#00C4FF</color>
+    <color name="krem1">#FFF5B8</color>
+    <color name="neon">#060047</color>
+    <color name="oren1">#E57C23</color>
+    <color name="oren2">#E57C23</color>
+    <color name="hijaujawir">#025464</color>
 </resources>

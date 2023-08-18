@@ -1,56 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddUserActivity">
-
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/tvImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilImgMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Enter Image Menu"
-            android:padding="5dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvImage">
-
-            <!--            <com.google.android.material.textfield.TextInputEditText-->
-            <!--                android:id="@+id/edtImgMenu"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:importantForAutofill="no"-->
-            <!--                android:inputType="text"-->
-            <!--                android:textSize="14sp" />-->
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilAddUser"
             android:layout_width="409dp"
             android:layout_height="wrap_content"
-            android:hint="Enter User"
+            android:hint="Nama"
             android:padding="5dp"
-            app:layout_constraintStart_toStartOf="@id/tilImgMenu"
-            app:layout_constraintTop_toBottomOf="@id/tilImgMenu">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edtUser"
@@ -62,26 +27,56 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilAddPasword"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Password"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="@id/tilAddUser"
+            app:layout_constraintTop_toBottomOf="@id/tilAddUser">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPaswordPegawai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="textPassword"
+                android:textSize="14sp" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <CheckBox
+            android:id="@+id/checkbox_kasir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kasir"
+            app:layout_constraintStart_toStartOf="@id/tilAddPasword"
+            app:layout_constraintTop_toBottomOf="@id/tilAddPasword" />
+
+        <CheckBox
+            android:id="@+id/checkbox_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manager"
+            app:layout_constraintStart_toEndOf="@id/checkbox_kasir"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="@id/checkbox_kasir" />
 
         <Button
             android:id="@+id/btnAddUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-
             android:text="Add User"
-            app:layout_constraintStart_toStartOf="@id/tilAddUser"
-            app:layout_constraintTop_toBottomOf="@id/tilAddUser" />
+            app:layout_constraintStart_toStartOf="@id/checkbox_kasir"
+            app:layout_constraintTop_toBottomOf="@id/checkbox_kasir" />
 
         <ProgressBar
             android:id="@+id/pbLoading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -93,3 +88,8 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
+
+
+
+
+

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuDetail">
+    tools:context=".menuDetail">
 
     <Button
         android:id="@+id/btnUpdate"
@@ -16,6 +16,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+
+
 
     <Button
         android:id="@+id/btnDelete"
@@ -222,6 +224,8 @@
 
 
                     />
+
+
 
             </LinearLayout>
 
