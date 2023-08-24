@@ -2,7 +2,6 @@ package com.example.ukl3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
@@ -11,7 +10,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.Transaction
 import com.google.firebase.database.ValueEventListener
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -48,20 +46,33 @@ class TambahTransaksi : AppCompatActivity() {
         val selectedPayment = spinnerPayment.selectedItem.toString()
         val tanggal = getCurrentDate()
 
-        val transaction = TransaksiModel(idTransaksi, menu, tanggal, selectedPayment)
-        val transactionRef = database.getReference("transaksi").child(idTransaksi)
+        val hargaMenuRef = menuRef.orderByChild("menuName").equalTo(menu)
+        hargaMenuRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    val menuPrice = snapshot.children.first().child("menuPrice").getValue(String::class.java)
+                    menuPrice?.let {
+                        val transaction = TransaksiModel(idTransaksi, menu, tanggal, selectedPayment, it)
+                        val transactionRef = database.getReference("transaksi").child(idTransaksi)
 
-        transactionRef.setValue(transaction)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Transaksi berhasil ditambahkan", Toast.LENGTH_SHORT).show()
-
+                        transactionRef.setValue(transaction)
+                            .addOnSuccessListener {
+                                Toast.makeText(this@TambahTransaksi, "Transaksi berhasil ditambahkan", Toast.LENGTH_SHORT).show()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this@TambahTransaksi, "Gagal menambahkan transaksi", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                } else {
+                    Toast.makeText(this@TambahTransaksi, "Menu tidak ditemukan", Toast.LENGTH_SHORT).show()
+                }
             }
-            .addOnFailureListener {
-                Toast.makeText(this, "Gagal menambahkan transaksi", Toast.LENGTH_SHORT).show()
 
+            override fun onCancelled(error: DatabaseError) {
+                // Handle error
             }
+        })
     }
-
 
     private fun setupSpinnerMenu() {
         val placeholder = "Pilih Menu"
@@ -91,9 +102,6 @@ class TambahTransaksi : AppCompatActivity() {
                 // Handle error
             }
         })
-
-
-
     }
 
     private fun getCurrentDate(): String {
@@ -102,7 +110,3 @@ class TambahTransaksi : AppCompatActivity() {
         return dateFormat.format(date)
     }
 }
-
-
-
-

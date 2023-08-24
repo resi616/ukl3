@@ -18,6 +18,7 @@ class TransaksiAdapter (private val transaksiList: List<TransaksiModel>) : Recyc
         val tvTransaksiMenu: TextView = itemView.findViewById(R.id.tvTransaksiMenu)
         val tvMetodePembayaran: TextView = itemView.findViewById(R.id.tvMetodePembayaran)
         val tvTanggalTransaksi: TextView = itemView.findViewById(R.id.tvTanggalTransaksi)
+        val tvHarga: TextView = itemView.findViewById(R.id.tvHargaMenu)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,6 +33,7 @@ class TransaksiAdapter (private val transaksiList: List<TransaksiModel>) : Recyc
         holder.tvTransaksiMenu.text = currentItem.menu
         holder.tvMetodePembayaran.text = currentItem.selectedPayment
         holder.tvTanggalTransaksi.text = currentItem.tanggal
+        holder.tvHarga.text = currentItem.harga
 
 
     }

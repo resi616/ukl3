@@ -33,13 +33,22 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTransaksiMenu" />
 
         <TextView
+            android:id="@+id/tvHargaMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMetodePembayaran" />
+
+        <TextView
             android:id="@+id/tvTanggalTransaksi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tanggal Transaksi"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvMetodePembayaran" />
+            app:layout_constraintTop_toBottomOf="@+id/tvHargaMenu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
