@@ -22,6 +22,7 @@ class TambahTransaksi : AppCompatActivity() {
     private lateinit var menuRef: DatabaseReference
     private lateinit var spinnerMenu: Spinner
     private lateinit var spinnerPayment: Spinner
+    private lateinit var spinnerMeja: Spinner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,8 @@ class TambahTransaksi : AppCompatActivity() {
         menuRef = database.getReference("Menu")
         spinnerPayment = findViewById(R.id.spinner_payment)
         spinnerMenu = findViewById(R.id.spinner_menu)
+        spinnerMeja = findViewById(R.id.spinner_meja)
+
 
         setupSpinnerMenu()
 
@@ -44,6 +47,7 @@ class TambahTransaksi : AppCompatActivity() {
         val idTransaksi = UUID.randomUUID().toString()
         val menu = spinnerMenu.selectedItem.toString()
         val selectedPayment = spinnerPayment.selectedItem.toString()
+        val selectedMeja = spinnerMeja.selectedItem.toString()
         val tanggal = getCurrentDate()
 
         val hargaMenuRef = menuRef.orderByChild("menuName").equalTo(menu)

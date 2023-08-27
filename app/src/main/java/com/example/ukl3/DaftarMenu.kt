@@ -50,11 +50,11 @@ class DaftarMenu : AppCompatActivity() {
             }
         })
 
-        // Set onClickListener for btnUpdateMenu using ViewBinding
+
         menuAdapter.setOnItemClickListener(object : MenuAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 val intent = Intent(this@DaftarMenu, menuDetail::class.java)
-                // Add any extra data you want to pass to MenuDetailActivity using intent.putExtra()
+
                 startActivity(intent)
             }
         })

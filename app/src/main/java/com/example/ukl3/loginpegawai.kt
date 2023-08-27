@@ -55,34 +55,34 @@ class loginpegawai : AppCompatActivity() {
                         val user = userSnapshot.getValue(UserModel::class.java)
                         if (user?.passwordPegawai == password) {
                             if (user.roleKasir) {
-                                // Role "kasir" adalah true, arahkan ke MainActivity dengan akses kasir
+
                                 val intent = Intent(this@loginpegawai, MainActivity::class.java)
                                 intent.putExtra("role", "kasir")
                                 startActivity(intent)
                                 finish()
                             } else if (user.roleManager) {
-                                // Role "manager" adalah true, arahkan ke ManagerOptionActivity dengan akses manager
+
                                 val intent = Intent(this@loginpegawai, managerOption::class.java)
                                 intent.putExtra("role", "manager")
                                 startActivity(intent)
                                 finish()
                             } else {
-                                // Role tidak valid
+
                                 Toast.makeText(this@loginpegawai, "Anda tidak memiliki akses yang valid", Toast.LENGTH_SHORT).show()
                             }
                         } else {
-                            // Password salah
+
                             Toast.makeText(this@loginpegawai, "Password salah", Toast.LENGTH_SHORT).show()
                         }
                     }
                 } else {
-                    // Username tidak ditemukan
+
                     Toast.makeText(this@loginpegawai, "Username tidak ditemukan", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Error saat membaca dari database
+
                 Toast.makeText(this@loginpegawai, "Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }
         })

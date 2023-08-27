@@ -48,6 +48,20 @@
 
     </Spinner>
 
+    <Spinner
+        android:id="@+id/spinner_meja"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@color/oren2"
+        android:autofillHints="Pilih Meja"
+        android:minHeight="48dp">
+
+    </Spinner>
+
     <Button
         android:id="@+id/addTransaksi"
         android:layout_width="300dp"

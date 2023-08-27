@@ -68,7 +68,7 @@ class DaftarUser : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // ... (kode penanganan error, jika diperlukan) ...
+
             }
         })
     }

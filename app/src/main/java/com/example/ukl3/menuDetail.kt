@@ -142,9 +142,7 @@ class menuDetail : AppCompatActivity() {
         }
     }
 
-    // Fungsi onActivityResult tetap sama
 
-    // Fungsi deleteRecord tetap sama
 
     private fun initView() {
         tvMenuId = findViewById(R.id.tvMenuId)
@@ -154,8 +152,8 @@ class menuDetail : AppCompatActivity() {
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
-        btnUpdateImage = findViewById(R.id.btnChooseImage) // Perbaikan di sini
-        btnUpdateData = findViewById(R.id.btnUpdateData) // Perbaikan di sini
+        btnUpdateImage = findViewById(R.id.btnChooseImage)
+        btnUpdateData = findViewById(R.id.btnUpdateData)
     }
 
     private fun setValuesToViews() {
@@ -175,7 +173,7 @@ class menuDetail : AppCompatActivity() {
         imageRef.putFile(selectedImageUri!!)
             .addOnSuccessListener {
                 imageRef.downloadUrl.addOnSuccessListener { uri ->
-                    // Dapatkan URL gambar dan perbarui database
+
                     val dbRef = FirebaseDatabase.getInstance().getReference("Menu").child(menuId)
                     val menuInfo = MenuModel(
                         menuId,
@@ -188,7 +186,7 @@ class menuDetail : AppCompatActivity() {
                 }
             }
             .addOnFailureListener {
-                // Tangani jika terjadi kesalahan saat mengunggah gambar
+
             }
     }
 

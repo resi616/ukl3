@@ -21,8 +21,8 @@ class sign_in : AppCompatActivity() {
         setContentView(R.layout.activity_sign_in)
         val textView = findViewById<TextView>(R.id.textViewClickable)
         textView.setOnClickListener {
-            // Memulai activity baru saat teks diklik
-            val intent = Intent(this, loginpegawai::class.java) // Ubah "TargetActivity" dengan nama activity tujuan Anda
+
+            val intent = Intent(this, loginpegawai::class.java)
             startActivity(intent)
         }
 
@@ -50,7 +50,7 @@ class sign_in : AppCompatActivity() {
         auth.signInWithEmailAndPassword(emailInput, passwordInput)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
+
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -62,7 +62,7 @@ class sign_in : AppCompatActivity() {
                     ).show()
 
                 } else {
-                    // If sign in fails, display a message to the user.
+
 
                     Toast.makeText(
                         baseContext,
